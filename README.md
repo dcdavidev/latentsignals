@@ -29,3 +29,13 @@ A programmatic reflection on suspended and unspoken devotion. The routine models
 - [JavaScript (ESM)](poetries/uncollected_reference/src/uncollected-reference.mjs)
 - [Rust](poetries/uncollected_reference/src/uncollected_reference.rs)
 - [Golang](poetries/uncollected_reference/src/uncollected_reference.go)
+
+### [`poetries/not_your_penelope`](poetries/not_your_penelope)
+
+Models unilateral devotion, deterministic deadlines, and resource reclamation over infinite waiting. The routine enforces boundaries against one-way channels, reclaiming the woven fabric of memory for oneself when reciprocity is not returned before the deadline.
+
+- [TypeScript](poetries/not_your_penelope/src/not-your-penelope.ts)
+- [JavaScript (ESM)](poetries/not_your_penelope/src/not-your-penelope.mjs)
+- [Rust](poetries/not_your_penelope/src/not_your_penelope.rs)
+- [Golang](poetries/not_your_penelope/src/not_your_penelope.go)
+- [Python](poetries/not_your_penelope/src/not_your_penelope.py)
