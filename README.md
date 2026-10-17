@@ -39,3 +39,13 @@ Models unilateral devotion, deterministic deadlines, and resource reclamation ov
 - [Rust](poetries/not_your_penelope/src/not_your_penelope.rs)
 - [Golang](poetries/not_your_penelope/src/not_your_penelope.go)
 - [Python](poetries/not_your_penelope/src/not_your_penelope.py)
+
+---
+
+## Packages
+
+Shared utilities and tooling under [`packages/`](packages/):
+
+### [`@latentsignals/file-reader`](packages/file-reader)
+
+TypeScript library and CLI utility that reads any source code file (`.go`, `.py`, `.ts`, `.rs`, `.ys`, `.json`, etc.) and exports it formatted ready for display in terminals (ANSI colors with line numbers) and web applications (semantic and styled HTML).
