@@ -1,0 +1,9 @@
+{
+  "name": "uncollected_reference",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A programmatic reflection on suspended and unspoken devotion.",
+  "type": "module",
+  "exports": "./src/uncollected-reference.mjs",
+  "main": "./src/uncollected-reference.mjs"
+}
