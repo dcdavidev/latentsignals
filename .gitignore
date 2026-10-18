@@ -8,3 +8,4 @@ __pycache__/
 *.py[cod]
 .react-router
 .turbo
+.vercel

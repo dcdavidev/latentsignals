@@ -3,6 +3,8 @@
  * ==================
  *
  * Server-side helpers to locate, read, and syntax-highlight code poems from the monorepo.
+ * Supports both compile-time Vite bundling (for serverless/Vercel/edge environments)
+ * and runtime filesystem traversal (for local dev and standard containers).
  */
 
 import fs from 'node:fs';
@@ -53,6 +55,115 @@ const EXTENSION_MAP: Record<
   '.ts': { id: 'typescript', label: 'TypeScript', hljsLang: 'typescript' },
 };
 
+// Vite compile-time bundle: embeds poetry packages and raw source files into the bundle
+const BUNDLED_PACKAGES = import.meta.glob<Record<string, unknown>>(
+  '../../../../poetries/*/package.json',
+  {
+    eager: true,
+    import: 'default',
+  }
+);
+
+const BUNDLED_FILES = import.meta.glob<string>(
+  ['../../../../poetries/*/lib/*', '../../../../poetries/*/src/*'],
+  {
+    eager: true,
+    query: '?raw',
+    import: 'default',
+  }
+);
+
+interface PackageJsonData {
+  name?: string;
+  description?: string;
+}
+
+/**
+ * Extracts and compiles bundled poetry files into in-memory PoetryDetail records.
+ *
+ * @returns Map of poetry slug to PoetryDetail.
+ */
+function getBundledPoetries(): Record<string, PoetryDetail> {
+  const result: Record<string, PoetryDetail> = {};
+
+  for (const [filePath, pkgObj] of Object.entries(BUNDLED_PACKAGES)) {
+    const match = filePath.match(/poetries\/([^/]+)\/package\.json$/);
+    if (!match) continue;
+    const slug = match[1];
+    const pkg = pkgObj as PackageJsonData;
+
+    const packageName = pkg.name || `@latentsignals/${slug}`;
+    const description = pkg.description || '';
+
+    result[slug] = {
+      slug,
+      packageName,
+      title: slug.replaceAll('-', ' '),
+      description,
+      languages: [],
+      files: {},
+      defaultLanguageId: '',
+    };
+  }
+
+  for (const [filePath, rawCode] of Object.entries(BUNDLED_FILES)) {
+    const match = filePath.match(/poetries\/([^/]+)\/(?:lib|src)\/([^/]+)$/);
+    if (!match) continue;
+    const slug = match[1];
+    const filename = match[2];
+
+    if (!result[slug]) {
+      result[slug] = {
+        slug,
+        packageName: `@latentsignals/${slug}`,
+        title: slug.replaceAll('-', ' '),
+        description: '',
+        languages: [],
+        files: {},
+        defaultLanguageId: '',
+      };
+    }
+
+    const ext = path.extname(filename);
+    const mapped = EXTENSION_MAP[ext];
+    if (mapped) {
+      const linesCount = rawCode.split('\n').length;
+      const byteSize = new TextEncoder().encode(rawCode).length;
+
+      let highlightedHtml: string;
+      try {
+        highlightedHtml = hljs.highlight(rawCode, {
+          language: mapped.hljsLang,
+        }).value;
+      } catch {
+        highlightedHtml = hljs.highlightAuto(rawCode).value;
+      }
+
+      const langInfo: LanguageFile = {
+        id: mapped.id,
+        label: mapped.label,
+        extension: ext,
+        filename,
+        linesCount,
+        byteSize,
+        rawCode,
+        highlightedHtml,
+      };
+
+      result[slug].files[mapped.id] = langInfo;
+      result[slug].languages.push(langInfo);
+    }
+  }
+
+  for (const detail of Object.values(result)) {
+    detail.languages.sort((a, b) => a.label.localeCompare(b.label));
+    detail.defaultLanguageId =
+      detail.languages.length > 0 ? detail.languages[0].id : '';
+  }
+
+  return result;
+}
+
 /**
  * Locates the `poetries/` directory from an environment variable or directory tree traversal.
  *
@@ -102,6 +213,21 @@ function getSourceDir(poetryDir: string): string | null {
  * @returns Sorted array of poetry summaries.
  */
 export function getAllPoetries(): PoetrySummary[] {
+  // 1. Try bundled poetries first (instant in-memory resolution for Vercel/serverless/production)
+  const bundled = getBundledPoetries();
+  if (Object.keys(bundled).length > 0) {
+    const summaries: PoetrySummary[] = Object.values(bundled).map((p) => ({
+      slug: p.slug,
+      packageName: p.packageName,
+      title: p.title,
+      description: p.description,
+      languages: p.languages,
+    }));
+    summaries.sort((a, b) => a.slug.localeCompare(b.slug));
+    return summaries;
+  }
+
+  // 2. Fallback to runtime filesystem traversal (local development/custom mounts)
   const poetriesDir = getPoetriesDir();
   const entries = fs.readdirSync(poetriesDir, { withFileTypes: true });
 
@@ -155,7 +281,6 @@ export function getAllPoetries(): PoetrySummary[] {
       }
     }
 
-    // Sort languages alphabetically by label
     languages.sort((a, b) => a.label.localeCompare(b.label));
 
     summaries.push({
@@ -167,7 +292,6 @@ export function getAllPoetries(): PoetrySummary[] {
     });
   }
 
-  // Sort poetries alphabetically by slug
   summaries.sort((a, b) => a.slug.localeCompare(b.slug));
 
   return summaries;
@@ -180,6 +304,13 @@ export function getAllPoetries(): PoetrySummary[] {
  * @returns Detail object including syntax-highlighted code files, or null if not found.
  */
 export function getPoetryBySlug(slug: string): PoetryDetail | null {
+  // 1. Try bundled poetries first (instant in-memory resolution for Vercel/serverless/production)
+  const bundled = getBundledPoetries();
+  if (Object.keys(bundled).length > 0) {
+    return bundled[slug] ?? null;
+  }
+
+  // 2. Fallback to runtime filesystem traversal (local development/custom mounts)
   const poetriesDir = getPoetriesDir();
   const poetryPath = path.join(poetriesDir, slug);
 
