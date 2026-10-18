@@ -1,0 +1,17 @@
+{
+  "name": "@latentsignals/not-your-penelope",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Models unilateral devotion, deterministic deadlines, and resource reclamation over infinite waiting.",
+  "type": "module",
+  "exports": {
+    ".": "./lib/not-your-penelope.mjs",
+    "./go": "./lib/not_your_penelope.go",
+    "./mjs": "./lib/not-your-penelope.mjs",
+    "./py": "./lib/not_your_penelope.py",
+    "./rs": "./lib/not_your_penelope.rs",
+    "./ts": "./lib/not-your-penelope.ts",
+    "./*": "./lib/*"
+  },
+  "main": "./lib/not-your-penelope.mjs"
+}

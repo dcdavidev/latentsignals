@@ -29,7 +29,7 @@ import {
 
 // Asynchronously read and format any file
 const result = await readFileFormatted(
-  'poetries/uncollected_reference/src/uncollected_reference.go'
+  'poetries/uncollected-reference/lib/uncollected_reference.go'
 );
 
 // Print highlighted code with line numbers to terminal:
@@ -62,11 +62,11 @@ console.log(formatted.terminal);
 
 ```bash
 # Print syntax-highlighted file to terminal
-file-reader poetries/uncollected_reference/src/uncollected_reference.py
+file-reader poetries/uncollected-reference/lib/uncollected_reference.py
 
 # Output JSON structure with metadata and all representations
-file-reader poetries/not_your_penelope/src/not_your_penelope.rs --json
+file-reader poetries/not-your-penelope/lib/not_your_penelope.rs --json
 
 # Output self-contained styled HTML
-file-reader poetries/uncollected_reference/src/uncollected_reference.go --html
+file-reader poetries/uncollected-reference/lib/uncollected_reference.go --html
 ```

@@ -1,9 +1,0 @@
-{
-  "name": "not_your_penelope",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Models unilateral devotion, deterministic deadlines, and resource reclamation over infinite waiting.",
-  "type": "module",
-  "exports": "./src/not-your-penelope.mjs",
-  "main": "./src/not-your-penelope.mjs"
-}

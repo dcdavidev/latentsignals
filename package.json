@@ -22,8 +22,7 @@
     "commit": "pnpm exec cz",
     "format": "pnpm exec prettier --write .",
     "lint": "pnpm exec eslint .",
-    "lint:fix": "pnpm exec eslint --fix .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:fix": "pnpm exec eslint --fix ."
   },
   "config": {
     "commitizen": {
@@ -31,6 +30,8 @@
     }
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^3.0.3",
     "@commitlint/cli": "^20.5.3",
     "@commitlint/config-conventional": "^20.5.3",
     "@prettier/plugin-xml": "^3.4.2",

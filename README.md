@@ -20,25 +20,25 @@ This repository is an anthology of programmatic poetry—emotional states render
 
 The workspace is organized as a monorepo containing poems modeled as packages under [`poetries/`](poetries/):
 
-### [`poetries/uncollected_reference`](poetries/uncollected_reference)
+### [`@latentsignals/uncollected-reference`](poetries/uncollected-reference)
 
 A programmatic reflection on suspended and unspoken devotion. The routine models an unresolved state where an emotional reference persists indefinitely in memory without ever receiving an incoming signal, existing as an uncollected pointer held across infinite event loop cycles.
 
-- [Python](poetries/uncollected_reference/src/uncollected_reference.py)
-- [TypeScript](poetries/uncollected_reference/src/uncollected-reference.ts)
-- [JavaScript (ESM)](poetries/uncollected_reference/src/uncollected-reference.mjs)
-- [Rust](poetries/uncollected_reference/src/uncollected_reference.rs)
-- [Golang](poetries/uncollected_reference/src/uncollected_reference.go)
+- [Golang](poetries/uncollected-reference/lib/uncollected_reference.go)
+- [JavaScript (ESM)](poetries/uncollected-reference/lib/uncollected-reference.mjs)
+- [Python](poetries/uncollected-reference/lib/uncollected_reference.py)
+- [Rust](poetries/uncollected-reference/lib/uncollected_reference.rs)
+- [TypeScript](poetries/uncollected-reference/lib/uncollected-reference.ts)
 
-### [`poetries/not_your_penelope`](poetries/not_your_penelope)
+### [`@latentsignals/not-your-penelope`](poetries/not-your-penelope)
 
 Models unilateral devotion, deterministic deadlines, and resource reclamation over infinite waiting. The routine enforces boundaries against one-way channels, reclaiming the woven fabric of memory for oneself when reciprocity is not returned before the deadline.
 
-- [TypeScript](poetries/not_your_penelope/src/not-your-penelope.ts)
-- [JavaScript (ESM)](poetries/not_your_penelope/src/not-your-penelope.mjs)
-- [Rust](poetries/not_your_penelope/src/not_your_penelope.rs)
-- [Golang](poetries/not_your_penelope/src/not_your_penelope.go)
-- [Python](poetries/not_your_penelope/src/not_your_penelope.py)
+- [Golang](poetries/not-your-penelope/lib/not_your_penelope.go)
+- [JavaScript (ESM)](poetries/not-your-penelope/lib/not-your-penelope.mjs)
+- [Python](poetries/not-your-penelope/lib/not_your_penelope.py)
+- [Rust](poetries/not-your-penelope/lib/not_your_penelope.rs)
+- [TypeScript](poetries/not-your-penelope/lib/not-your-penelope.ts)
 
 ---
 
