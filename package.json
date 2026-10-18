@@ -19,10 +19,13 @@
   "author": "Davide Di Criscito",
   "type": "module",
   "scripts": {
+    "build": "turbo build",
     "commit": "pnpm exec cz",
+    "dev": "turbo dev",
     "format": "pnpm exec prettier --write .",
     "lint": "pnpm exec eslint .",
-    "lint:fix": "pnpm exec eslint --fix ."
+    "lint:fix": "pnpm exec eslint --fix .",
+    "typecheck": "turbo typecheck"
   },
   "config": {
     "commitizen": {
@@ -53,6 +56,7 @@
     "prettier-plugin-sh": "^0.20.2",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "prettier-plugin-toml": "^4.0.0",
+    "turbo": "^2.11.9",
     "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.33.3"

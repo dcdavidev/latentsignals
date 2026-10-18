@@ -8,6 +8,9 @@ import { configVuoto } from 'eslint-plugin-spellbookx/vuoto';
 
 export default defineConfig([
   configIgnores,
+  {
+    ignores: ['**/.react-router/**'],
+  },
   configJavascript,
   configJson,
   configMarkdown,

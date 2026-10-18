@@ -6,3 +6,5 @@ dist
 *.local
 __pycache__/
 *.py[cod]
+.react-router
+.turbo
