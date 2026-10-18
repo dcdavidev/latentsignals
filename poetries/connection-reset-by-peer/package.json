@@ -1,0 +1,17 @@
+{
+  "name": "@latentsignals/connection-reset-by-peer",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A formal protocol teardown illustrating betrayal, wounded pride, and irreversible socket termination.",
+  "type": "module",
+  "exports": {
+    ".": "./lib/connection-reset-by-peer.mjs",
+    "./go": "./lib/connection_reset_by_peer.go",
+    "./mjs": "./lib/connection-reset-by-peer.mjs",
+    "./py": "./lib/connection_reset_by_peer.py",
+    "./rs": "./lib/connection_reset_by_peer.rs",
+    "./ts": "./lib/connection-reset-by-peer.ts",
+    "./*": "./lib/*"
+  },
+  "main": "./lib/connection-reset-by-peer.mjs"
+}

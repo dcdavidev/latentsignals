@@ -10,7 +10,7 @@ Models unilateral devotion, deterministic deadlines, and resource reclamation ov
 import asyncio
 from dataclasses import dataclass
 from enum import Enum
-from typing import Literal, Optional
+from typing import Literal
 
 
 class PeerLocation(str, Enum):
@@ -45,7 +45,7 @@ class TerminalResolution(str, Enum):
 async def assert_reciprocity(
     peer: DistantPeer,
     deadline_ms: float,
-    return_signal: Optional[asyncio.Event] = None,
+    return_signal: asyncio.Event | None = None,
 ) -> TerminalResolution:
     """
     Executes the boundary protocol between self-preservation and waiting.
@@ -73,12 +73,13 @@ async def assert_reciprocity(
             fabric.is_unraveled_at_night = False
             return TerminalResolution.RECLAIMED
 
-        if return_signal and return_signal.is_set():
-            if (
-                peer.location == PeerLocation.ITHACA
-                and not peer.is_unidirectional
-            ):
-                return TerminalResolution.DISCONNECTED
+        if (
+            return_signal
+            and return_signal.is_set()
+            and peer.location == PeerLocation.ITHACA
+            and not peer.is_unidirectional
+        ):
+            return TerminalResolution.DISCONNECTED
 
         # Weave thread strictly into local state
         fabric.threads_count += 1

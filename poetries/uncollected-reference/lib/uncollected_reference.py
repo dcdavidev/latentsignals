@@ -8,13 +8,11 @@ A programmatic reflection on suspended and unspoken devotion.
 """
 
 import asyncio
-from typing import NoReturn, Optional
+from typing import NoReturn
 
 
 class Echo:
     """Represents a trace that exists without a signal."""
-
-    pass
 
 
 async def memory_space() -> NoReturn:
@@ -25,9 +23,9 @@ async def memory_space() -> NoReturn:
     garbage collection of the persistent presence.
     """
     # Allocate unbounded state for an unresolved reference
-    presence: Optional[Echo] = Echo()
+    presence: Echo | None = Echo()
     latency: float = float("inf")
-    heartbeat_received: bool = False
+    heartbeat_received: bool = False  # noqa: F841
 
     while True:
         try:
@@ -36,7 +34,7 @@ async def memory_space() -> NoReturn:
                 asyncio.sleep(latency),
                 timeout=0.0,
             )
-        except asyncio.TimeoutError:
+        except TimeoutError:
             # The silence is not an exception; it is steady state
             pass
 
