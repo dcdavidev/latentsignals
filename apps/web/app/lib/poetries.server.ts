@@ -54,11 +54,19 @@ const EXTENSION_MAP: Record<
 };
 
 /**
- * Traverses up directory tree to locate the root `poetries/` directory.
+ * Locates the `poetries/` directory from an environment variable or directory tree traversal.
  *
  * @returns The absolute path to the `poetries/` directory.
  */
 function getPoetriesDir(): string {
+  if (
+    process.env.POETRIES_DIR &&
+    fs.existsSync(process.env.POETRIES_DIR) &&
+    fs.statSync(process.env.POETRIES_DIR).isDirectory()
+  ) {
+    return process.env.POETRIES_DIR;
+  }
+
   let curr = process.cwd();
   while (curr !== path.dirname(curr)) {
     const candidate = path.join(curr, 'poetries');
