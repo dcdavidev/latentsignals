@@ -11,5 +11,8 @@ pub mod connection_reset_by_peer;
 #[path = "poetries/not-your-penelope/not_your_penelope.rs"]
 pub mod not_your_penelope;
 
+#[path = "poetries/the-graceful-yield/the_graceful_yield.rs"]
+pub mod the_graceful_yield;
+
 #[path = "poetries/uncollected-reference/uncollected_reference.rs"]
 pub mod uncollected_reference;

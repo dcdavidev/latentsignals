@@ -20,6 +20,7 @@ Each signal is written across multiple programming languages—**Go**, **JavaScr
 | :-------------------------------------------------------------- | :--------------------------- | :--------- | :------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`connection-reset-by-peer`](poetries/connection-reset-by-peer) | **Connection Reset by Peer** | 2026-10-18 | `Bash` `Go` `JS` `Py` `Rs` `Ts` | A formal protocol teardown illustrating betrayal, wounded pride, and irreversible socket termination across a duplex channel. Once mutual integrity is violated, belated apology frames cannot revive a closed descriptor. |
 | [`not-your-penelope`](poetries/not-your-penelope)               | **Not Your Penelope**        | 2026-10-17 | `Bash` `Go` `JS` `Py` `Rs` `Ts` | Models unilateral devotion, deterministic deadlines, and resource reclamation over infinite waiting. The local runtime reclaims thread execution and state rather than waiting indefinitely for an absent peer.            |
+| [`the-graceful-yield`](poetries/the-graceful-yield)             | **The Graceful Yield**       | 2026-10-21 | `Bash` `Go` `JS` `Py` `Rs` `Ts` | A quiet departure from a unidirectional channel: closing the write descriptor, releasing shared locks, and stepping aside with grace so silence is never a fault.                                                          |
 | [`uncollected-reference`](poetries/uncollected-reference)       | **Uncollected Reference**    | 2026-10-15 | `Bash` `Go` `JS` `Py` `Rs` `Ts` | A programmatic reflection on suspended and unspoken devotion. Maintains an unbounded loop on an empty socket channel while preventing garbage collection of the persistent presence.                                       |
 
 ---
@@ -45,6 +46,13 @@ latentsignals/
 │   │   ├── connection_reset_by_peer.sh
 │   │   └── connection-reset-by-peer.ts
 │   ├── not-your-penelope/
+│   ├── the-graceful-yield/
+│   │   ├── the_graceful_yield.go
+│   │   ├── the-graceful-yield.mjs
+│   │   ├── the_graceful_yield.py
+│   │   ├── the_graceful_yield.rs
+│   │   ├── the-graceful-yields.sh
+│   │   └── the-graceful-yield.ts
 │   └── uncollected-reference/
 ├── Cargo.toml                        # Rust cargo crate configuration
 ├── lib.rs                            # Rust root library re-exporting poetry modules
