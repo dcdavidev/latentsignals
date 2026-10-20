@@ -1,0 +1,60 @@
+[project]
+name = "latentsignals"
+version = "0.1.0"
+description = "Signals not yet decoded or travelling under the radar accross the network."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "isort>=9.0.2",
+    "mypy>=2.4.0",
+    "poethepoet>=0.49.0",
+    "ruff>=0.17.1",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+include = ["poetries/**/*.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.12"
+files = ["poetries"]
+strict = true
+warn_unused_configs = true
+
+[tool.isort]
+profile = "black"
+line_length = 88
+src_paths = ["poetries"]
+
+[tool.poe.tasks]
+# Composite workflows
+check = ["fmt-check", "isort-check", "lint", "typecheck"]
+fix = ["fmt", "isort", "lint-fix"]
+
+# Formatting
+fmt = "ruff format"
+fmt-check = "ruff format --check"
+
+# Import sorting
+isort = "isort poetries"
+isort-check = "isort poetries --check"
+
+# Linting & Type checking
+lint = "ruff check"
+lint-fix = "ruff check --fix"
+typecheck = "mypy"

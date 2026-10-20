@@ -1,0 +1,19 @@
+.DS_Store
+.env
+/node_modules/
+
+# React Router
+/.react-router/
+/build/
+
+# Vercel
+/.vercel/
+
+# Python
+/.venv/
+__pycache__/
+.ruff_cache/
+.mypy_cache/
+
+# Rust
+/target/

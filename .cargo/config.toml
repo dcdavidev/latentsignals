@@ -1,0 +1,7 @@
+[alias]
+lint = "clippy --lib"
+lint-fix = "clippy --fix --lib --allow-no-vcs"
+fmt-check = "fmt --check"
+fmt-fix = "fmt"
+check-lib = "check --lib"
+test-lib = "test --lib"

@@ -1,0 +1,50 @@
+version: '3'
+
+vars:
+  POETRIES_DIR: poetries
+
+tasks:
+  default:
+    desc: List all available Go tasks
+    cmds:
+      - task --list
+
+  fmt:
+    desc: Format Go source code and organize imports
+    cmds:
+      - gofmt -s -w {{.POETRIES_DIR}}
+      - goimports -w {{.POETRIES_DIR}}
+
+  fmt:check:
+    desc: Check Go formatting without modifying files
+    cmds:
+      - test -z "$(gofmt -l {{.POETRIES_DIR}})"
+      - test -z "$(goimports -l {{.POETRIES_DIR}})"
+
+  vet:
+    desc: Run standard Go vet static analysis
+    cmds:
+      - go vet ./...
+
+  staticcheck:
+    desc: Run advanced static analysis with staticcheck
+    cmds:
+      - staticcheck ./...
+
+  lint:
+    desc: Run golangci-lint across all Go packages
+    cmds:
+      - golangci-lint run ./...
+
+  test:
+    desc: Run Go tests
+    cmds:
+      - go test -v ./...
+
+  check:
+    desc: Run all Go static checks (vet, staticcheck, lint, fmt:check)
+    cmds:
+      - task: fmt:check
+      - task: vet
+      - task: staticcheck
+      - task: lint

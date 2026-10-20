@@ -1,0 +1,13 @@
+[package]
+name = "latentsignals"
+version = "0.1.0"
+edition = "2021"
+description = "Signals not yet decoded or travelling under the radar accross the network."
+publish = false
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+
+[lib]
+name = "latentsignals"
+path = "lib.rs"

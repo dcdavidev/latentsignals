@@ -1,0 +1,12 @@
+*.log
+.git
+.react-router
+.turbo
+.venv
+.vercel
+.vscode
+README.md
+build
+dist
+node_modules
+target
