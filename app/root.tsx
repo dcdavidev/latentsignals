@@ -26,7 +26,7 @@ import {
 import './app.css';
 
 import type { Route } from './+types/root';
-import { theme } from './lib/theme';
+import { theme } from './lib/theme.js';
 
 export const meta: Route.MetaFunction = () => [
   { title: 'Latent Signals' },

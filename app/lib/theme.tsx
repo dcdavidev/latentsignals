@@ -8,7 +8,10 @@ export const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#00ff00',
+      main: '#593c8f',
+      light: '#7a63a5',
+      dark: '#3e2a64',
+      contrastText: '#ffffff',
     },
   },
 });
