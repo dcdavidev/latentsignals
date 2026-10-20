@@ -1,2 +1,14 @@
 *.rs
 .agents
+go.mod
+go.sum
+*.go
+*.py
+*.lock
+pnpm-lock.yaml
+uv.lock
+Cargo.lock
+.cargo
+Cargo.toml
+pyproject.toml
+.editorconfig

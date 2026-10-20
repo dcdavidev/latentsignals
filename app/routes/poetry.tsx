@@ -454,20 +454,11 @@ export default function Poetry({ loaderData }: Route.ComponentProps) {
           sx={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             flexWrap: 'wrap',
             gap: 2,
           }}
         >
-          <Typography
-            variant="caption"
-            color="text.secondary"
-            sx={{ fontFamily: 'var(--font-mono)' }}
-          >
-            Package:{' '}
-            <code style={{ color: '#00ff00' }}>{poetry.packageName}</code>
-          </Typography>
-
           <Button
             component={Link}
             to="/"

@@ -16,11 +16,11 @@ Each signal is written across multiple programming languages—**Go**, **JavaScr
 
 ## 📡 Signal Archive
 
-| Signal                                                          | Title                        | Created    | Languages                | Theme / Concept                                                                                                                                                                                                            |
-| :-------------------------------------------------------------- | :--------------------------- | :--------- | :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`connection-reset-by-peer`](poetries/connection-reset-by-peer) | **Connection Reset by Peer** | 2026-10-18 | `Go` `JS` `Py` `Rs` `Ts` | A formal protocol teardown illustrating betrayal, wounded pride, and irreversible socket termination across a duplex channel. Once mutual integrity is violated, belated apology frames cannot revive a closed descriptor. |
-| [`not-your-penelope`](poetries/not-your-penelope)               | **Not Your Penelope**        | 2026-10-17 | `Go` `JS` `Py` `Rs` `Ts` | Models unilateral devotion, deterministic deadlines, and resource reclamation over infinite waiting. The local runtime reclaims thread execution and state rather than waiting indefinitely for an absent peer.            |
-| [`uncollected-reference`](poetries/uncollected-reference)       | **Uncollected Reference**    | 2026-10-15 | `Go` `JS` `Py` `Rs` `Ts` | A programmatic reflection on suspended and unspoken devotion. Maintains an unbounded loop on an empty socket channel while preventing garbage collection of the persistent presence.                                       |
+| Signal                                                          | Title                        | Created    | Languages                       | Theme / Concept                                                                                                                                                                                                            |
+| :-------------------------------------------------------------- | :--------------------------- | :--------- | :------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`connection-reset-by-peer`](poetries/connection-reset-by-peer) | **Connection Reset by Peer** | 2026-10-18 | `Bash` `Go` `JS` `Py` `Rs` `Ts` | A formal protocol teardown illustrating betrayal, wounded pride, and irreversible socket termination across a duplex channel. Once mutual integrity is violated, belated apology frames cannot revive a closed descriptor. |
+| [`not-your-penelope`](poetries/not-your-penelope)               | **Not Your Penelope**        | 2026-10-17 | `Bash` `Go` `JS` `Py` `Rs` `Ts` | Models unilateral devotion, deterministic deadlines, and resource reclamation over infinite waiting. The local runtime reclaims thread execution and state rather than waiting indefinitely for an absent peer.            |
+| [`uncollected-reference`](poetries/uncollected-reference)       | **Uncollected Reference**    | 2026-10-15 | `Bash` `Go` `JS` `Py` `Rs` `Ts` | A programmatic reflection on suspended and unspoken devotion. Maintains an unbounded loop on an empty socket channel while preventing garbage collection of the persistent presence.                                       |
 
 ---
 
@@ -42,6 +42,7 @@ latentsignals/
 │   │   ├── connection-reset-by-peer.mjs
 │   │   ├── connection_reset_by_peer.py
 │   │   ├── connection_reset_by_peer.rs
+│   │   ├── connection_reset_by_peer.sh
 │   │   └── connection-reset-by-peer.ts
 │   ├── not-your-penelope/
 │   └── uncollected-reference/

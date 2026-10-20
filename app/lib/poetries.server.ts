@@ -52,6 +52,7 @@ const EXTENSION_MAP: Record<
   '.js': { id: 'javascript', label: 'JavaScript', hljsLang: 'javascript' },
   '.py': { id: 'python', label: 'Python', hljsLang: 'python' },
   '.rs': { id: 'rust', label: 'Rust', hljsLang: 'rust' },
+  '.sh': { id: 'bash', label: 'Bash', hljsLang: 'bash' },
   '.ts': { id: 'typescript', label: 'TypeScript', hljsLang: 'typescript' },
 };
 

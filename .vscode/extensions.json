@@ -9,6 +9,8 @@
     "EditorConfig.EditorConfig",
     "vercel.turbo",
     "dotenv.dotenv-vscode",
-    "rust-lang.rust-analyzer"
+    "rust-lang.rust-analyzer",
+    "foxundermoon.shell-format",
+    "timonwong.shellcheck"
   ]
 }
