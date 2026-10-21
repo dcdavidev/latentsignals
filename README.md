@@ -25,47 +25,6 @@ Each signal is written across multiple programming languages—**Go**, **JavaScr
 
 ---
 
-## 🏗️ Repository Architecture
-
-The project is structured as a unified, flat polyglot monorepo:
-
-```text
-latentsignals/
-├── app/                              # Full-stack web application (React Router, MUI, Tailwind)
-│   ├── lib/poetries.server.ts        # Server-side poetry loader & syntax highlighter
-│   ├── routes/
-│   │   ├── home.tsx                  # Catalog & archive gallery
-│   │   └── poetry.tsx                # Multi-language code poetry viewer
-│   └── root.tsx
-├── poetries/                         # Polyglot code poems (organized by slug)
-│   ├── connection-reset-by-peer/
-│   │   ├── connection_reset_by_peer.go
-│   │   ├── connection-reset-by-peer.mjs
-│   │   ├── connection_reset_by_peer.py
-│   │   ├── connection_reset_by_peer.rs
-│   │   ├── connection_reset_by_peer.sh
-│   │   └── connection-reset-by-peer.ts
-│   ├── not-your-penelope/
-│   ├── the-graceful-yield/
-│   │   ├── the_graceful_yield.go
-│   │   ├── the-graceful-yield.mjs
-│   │   ├── the_graceful_yield.py
-│   │   ├── the_graceful_yield.rs
-│   │   ├── the-graceful-yields.sh
-│   │   └── the-graceful-yield.ts
-│   └── uncollected-reference/
-├── Cargo.toml                        # Rust cargo crate configuration
-├── lib.rs                            # Rust root library re-exporting poetry modules
-├── go.mod                            # Go module definition (latentsignals)
-├── .golangci.yml                     # Go linter configuration
-├── pyproject.toml                    # Python project configuration (uv, ruff, mypy, isort)
-├── package.json                      # Web application & TypeScript dev dependencies
-├── Dockerfile                        # Multi-stage container deployment
-└── vite.config.ts                    # Vite build pipeline
-```
-
----
-
 ## 🛠️ Development & Tooling
 
 Each language ecosystem maintains its own native toolchain, linting, and formatting anchored at the project root.
