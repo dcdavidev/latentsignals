@@ -37,14 +37,27 @@ export const meta: Route.MetaFunction = ({ loaderData }) => {
   if (!loaderData?.poetry) {
     return [{ title: 'Poem Not Found • Latent Signals' }];
   }
+
+  const { poetry } = loaderData;
+  const ogImageUrl = `/poetries/${poetry.slug}/og.png`;
+  const description =
+    poetry.description || `Code poetry implementation for ${poetry.title}.`;
+
   return [
-    { title: `${loaderData.poetry.title} • Latent Signals` },
-    {
-      name: 'description',
-      content:
-        loaderData.poetry.description ||
-        `Code poetry implementation for ${loaderData.poetry.title}.`,
-    },
+    { title: `${poetry.title} • Latent Signals` },
+    { name: 'description', content: description },
+    { property: 'og:type', content: 'article' },
+    { property: 'og:title', content: `${poetry.title} • Latent Signals` },
+    { property: 'og:description', content: description },
+    { property: 'og:image', content: ogImageUrl },
+    { property: 'og:image:type', content: 'image/png' },
+    { property: 'og:image:width', content: '1200' },
+    { property: 'og:image:height', content: '630' },
+    { property: 'og:image:alt', content: `${poetry.title} code poetry` },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: `${poetry.title} • Latent Signals` },
+    { name: 'twitter:description', content: description },
+    { name: 'twitter:image', content: ogImageUrl },
   ];
 };
 
