@@ -69,14 +69,3 @@ And yet, in a quiet, undisturbed corner of your mind, you still keep a place res
 | **`Catching TimeoutError` as normal** | Accepting that silence is the current reality             |
 | **`runtime.KeepAlive()`**             | A conscious choice never to let the memory fade           |
 | **`yield / sleep(0)`**                | Continuing to live everyday life while holding the memory |
-
----
-
-## 📂 Source Files
-
-- [`uncollected_reference.go`](uncollected_reference.go)
-- [`uncollected_reference.py`](uncollected_reference.py)
-- [`uncollected_reference.rs`](uncollected_reference.rs)
-- [`uncollected-reference.ts`](uncollected-reference.ts)
-- [`uncollected-reference.mjs`](uncollected-reference.mjs)
-- [`uncollected_reference.sh`](uncollected_reference.sh)

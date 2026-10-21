@@ -71,14 +71,3 @@ When the deadline strikes, they pack away the longing, keep their creations, and
 | **Unraveling by Night**          | Voluntary rollback of progress / endless deferral        |
 | **The Deadline**                 | `context.WithTimeout` / `AbortSignal` / `deadline_ms`    |
 | **`RECLAIMED`**                  | Resource retention, socket termination, self-sovereignty |
-
----
-
-## 📂 Source Files
-
-- [`not_your_penelope.go`](not_your_penelope.go)
-- [`not_your_penelope.py`](not_your_penelope.py)
-- [`not_your_penelope.rs`](not_your_penelope.rs)
-- [`not-your-penelope.ts`](not-your-penelope.ts)
-- [`not-your-penelope.mjs`](not-your-penelope.mjs)
-- [`not_your_penelope.sh`](not_your_penelope.sh)

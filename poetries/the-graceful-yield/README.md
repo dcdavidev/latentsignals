@@ -72,14 +72,3 @@ Instead of knocking on their door in anger, demanding an explanation, or begging
 | **`trap '' PIPE`**        | Choosing peace and emotional composure over panic              |
 | **`exec 3>&-`**           | Closing the channel, letting silence take over                 |
 | **Exit `0`**              | Clean closure; departing with self-respect intact              |
-
----
-
-## 📂 Source Files
-
-- [`the_graceful_yield.go`](the_graceful_yield.go)
-- [`the_graceful_yield.py`](the_graceful_yield.py)
-- [`the_graceful_yield.rs`](the_graceful_yield.rs)
-- [`the-graceful-yield.ts`](the-graceful-yield.ts)
-- [`the-graceful-yield.mjs`](the-graceful-yield.mjs)
-- [`the-graceful-yields.sh`](the-graceful-yields.sh)

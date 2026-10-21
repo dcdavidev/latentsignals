@@ -66,14 +66,3 @@ There is no screaming match and no prolonged debate. The wounded person immediat
 | **Reaction**       | Firewall locking / `PRIDE_THRESHOLD >= 1.0`     | Protective pride, refusal to negotiate           |
 | **Belated Frames** | Packets arriving on unbound port                | Apologies offered after the bridge is burned     |
 | **Result**         | `ECONNRESET` / Exit code `104`                  | Irreversible parting; the number is disconnected |
-
----
-
-## 📂 Source Files
-
-- [`connection_reset_by_peer.go`](connection_reset_by_peer.go)
-- [`connection_reset_by_peer.py`](connection_reset_by_peer.py)
-- [`connection_reset_by_peer.rs`](connection_reset_by_peer.rs)
-- [`connection-reset-by-peer.ts`](connection-reset-by-peer.ts)
-- [`connection-reset-by-peer.mjs`](connection-reset-by-peer.mjs)
-- [`connection_reset_by_peer.sh`](connection_reset_by_peer.sh)
