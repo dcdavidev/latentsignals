@@ -11,6 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import hljs from 'highlight.js';
+import { marked } from 'marked';
 
 export interface LanguageInfo {
   id: string;
@@ -37,6 +38,8 @@ export interface PoetrySummary {
 export interface PoetryDetail extends PoetrySummary {
   files: Record<string, LanguageFile>;
   defaultLanguageId: string;
+  readme?: string;
+  readmeHtml?: string;
 }
 
 const EXTENSION_MAP: Record<
@@ -66,7 +69,12 @@ const BUNDLED_PACKAGES = import.meta.glob<Record<string, unknown>>(
 );
 
 const BUNDLED_FILES = import.meta.glob<string>(
-  ['../../poetries/*/*', '../../poetries/*/lib/*', '../../poetries/*/src/*'],
+  [
+    '../../poetries/*/*',
+    '../../poetries/*/README.md',
+    '../../poetries/*/lib/*',
+    '../../poetries/*/src/*',
+  ],
   {
     eager: true,
     query: '?raw',
@@ -133,6 +141,23 @@ function getBundledPoetries(): Record<string, PoetryDetail> {
     if (!match) continue;
     const slug = match[1];
     const filename = match[2];
+
+    if (filename.toLowerCase() === 'readme.md') {
+      if (!result[slug]) {
+        result[slug] = {
+          slug,
+          packageName: `@latentsignals/${slug}`,
+          title: slug.replaceAll('-', ' '),
+          description: '',
+          languages: [],
+          files: {},
+          defaultLanguageId: '',
+        };
+      }
+      result[slug].readme = rawCode;
+      result[slug].readmeHtml = marked.parse(rawCode) as string;
+      continue;
+    }
 
     const ext = path.extname(filename);
     const mapped = EXTENSION_MAP[ext];
@@ -414,6 +439,18 @@ export function getPoetryBySlug(slug: string): PoetryDetail | null {
 
   const defaultLanguageId = languages.length > 0 ? languages[0].id : '';
 
+  let readme: string | undefined;
+  let readmeHtml: string | undefined;
+  const readmePath = path.join(poetryPath, 'README.md');
+  if (fs.existsSync(readmePath)) {
+    try {
+      readme = fs.readFileSync(readmePath, 'utf8');
+      readmeHtml = marked.parse(readme) as string;
+    } catch {
+      // ignore parse or read errors
+    }
+  }
+
   return {
     slug,
     packageName,
@@ -422,5 +459,7 @@ export function getPoetryBySlug(slug: string): PoetryDetail | null {
     languages,
     files,
     defaultLanguageId,
+    readme,
+    readmeHtml,
   };
 }

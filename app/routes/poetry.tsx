@@ -447,6 +447,171 @@ export default function Poetry({ loaderData }: Route.ComponentProps) {
           </Stack>
         )}
 
+        {/* Poem Documentation & Metaphor Analysis (README.md) */}
+        {poetry.readmeHtml && (
+          <Box
+            component="section"
+            sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <Typography
+                variant="caption"
+                color="text.secondary"
+                sx={{
+                  fontFamily: 'var(--font-mono)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  fontWeight: 700,
+                }}
+              >
+                Documentation &amp; Metaphor Analysis
+              </Typography>
+            </Box>
+
+            <Paper
+              elevation={0}
+              variant="outlined"
+              sx={{
+                p: { xs: 2.5, sm: 4 },
+                borderRadius: 2,
+                borderColor: 'divider',
+                bgcolor: (theme) =>
+                  theme.palette.mode === 'dark'
+                    ? 'rgba(255, 255, 255, 0.02)'
+                    : 'background.paper',
+                overflowX: 'auto',
+              }}
+            >
+              <Box
+                sx={{
+                  fontFamily: 'var(--font-mono)',
+                  color: 'text.primary',
+                  '& h1': {
+                    fontSize: { xs: '1.4rem', sm: '1.75rem' },
+                    fontWeight: 700,
+                    mt: 0,
+                    mb: 1.5,
+                    fontFamily: 'var(--font-mono)',
+                    letterSpacing: '-0.02em',
+                    color: 'text.primary',
+                  },
+                  '& h2': {
+                    fontSize: { xs: '1.15rem', sm: '1.3rem' },
+                    fontWeight: 600,
+                    mt: 4,
+                    mb: 2,
+                    fontFamily: 'var(--font-mono)',
+                    color: 'text.primary',
+                    borderBottom: 1,
+                    borderColor: 'divider',
+                    pb: 1,
+                  },
+                  '& h3': {
+                    fontSize: { xs: '0.95rem', sm: '1.05rem' },
+                    fontWeight: 600,
+                    mt: 3,
+                    mb: 1.5,
+                    fontFamily: 'var(--font-mono)',
+                    color: 'primary.main',
+                  },
+                  '& p': {
+                    lineHeight: 1.7,
+                    fontSize: '0.875rem',
+                    mb: 2,
+                    color: 'text.secondary',
+                  },
+                  '& ul, & ol': {
+                    pl: 3,
+                    mb: 2.5,
+                    color: 'text.secondary',
+                    fontSize: '0.875rem',
+                    '& li': {
+                      mb: 1,
+                      lineHeight: 1.6,
+                    },
+                  },
+                  '& blockquote': {
+                    borderLeft: 3,
+                    borderColor: 'primary.main',
+                    my: 2.5,
+                    mx: 0,
+                    py: 1,
+                    px: 2,
+                    bgcolor: (theme) =>
+                      theme.palette.mode === 'dark'
+                        ? 'rgba(255, 255, 255, 0.03)'
+                        : 'rgba(0, 0, 0, 0.02)',
+                    borderRadius: 1,
+                    color: 'text.secondary',
+                    '& p': {
+                      m: 0,
+                      fontSize: '0.85rem',
+                    },
+                  },
+                  '& hr': {
+                    border: 'none',
+                    borderTop: 1,
+                    borderColor: 'divider',
+                    my: 3.5,
+                  },
+                  '& code': {
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.85em',
+                    bgcolor: (theme) =>
+                      theme.palette.mode === 'dark'
+                        ? 'rgba(255, 255, 255, 0.08)'
+                        : 'rgba(0, 0, 0, 0.06)',
+                    px: 0.6,
+                    py: 0.2,
+                    borderRadius: 0.5,
+                    color: 'text.primary',
+                  },
+                  '& pre': {
+                    p: 2,
+                    borderRadius: 1.5,
+                    overflowX: 'auto',
+                    bgcolor: '#0d1117',
+                    border: 1,
+                    borderColor: 'divider',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.8125rem',
+                    '& code': {
+                      p: 0,
+                      bgcolor: 'transparent',
+                    },
+                  },
+                  '& table': {
+                    width: '100%',
+                    borderCollapse: 'collapse',
+                    my: 3,
+                    fontSize: '0.8125rem',
+                  },
+                  '& th, & td': {
+                    border: 1,
+                    borderColor: 'divider',
+                    py: 1.25,
+                    px: 2,
+                    textAlign: 'left',
+                  },
+                  '& th': {
+                    bgcolor: (theme) =>
+                      theme.palette.mode === 'dark'
+                        ? 'rgba(255, 255, 255, 0.05)'
+                        : 'rgba(0, 0, 0, 0.04)',
+                    fontWeight: 600,
+                    color: 'text.primary',
+                  },
+                  '& td': {
+                    color: 'text.secondary',
+                  },
+                }}
+                /* eslint-disable-next-line @eslint-react/dom/no-dangerously-set-innerhtml */
+                dangerouslySetInnerHTML={{ __html: poetry.readmeHtml }}
+              />
+            </Paper>
+          </Box>
+        )}
+
         <Divider sx={{ my: 2 }} />
 
         {/* Footer info */}
