@@ -5,6 +5,9 @@
 
 #![allow(unused_variables, unused_assignments)]
 
+#[path = "poetries/asymmetric-eviction/asymmetric_eviction.rs"]
+pub mod asymmetric_eviction;
+
 #[path = "poetries/connection-reset-by-peer/connection_reset_by_peer.rs"]
 pub mod connection_reset_by_peer;
 
