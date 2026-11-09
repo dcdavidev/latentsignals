@@ -11,6 +11,9 @@ pub mod asymmetric_eviction;
 #[path = "poetries/connection-reset-by-peer/connection_reset_by_peer.rs"]
 pub mod connection_reset_by_peer;
 
+#[path = "poetries/in-the-hatred-of-a-minute/in_the_hatred_of_a_minute.rs"]
+pub mod in_the_hatred_of_a_minute;
+
 #[path = "poetries/not-your-penelope/not_your_penelope.rs"]
 pub mod not_your_penelope;
 
