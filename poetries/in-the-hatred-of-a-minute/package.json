@@ -1,0 +1,41 @@
+{
+  "name": "@latentsignals/in-the-hatred-of-a-minute",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Volatile state incineration and cold-storage archival: wiping years of accumulated love in a sixty-second fault spike because burning it down is cheaper than committing to persistent memory, while a tenant process still occupies the heap rent-free.",
+  "keywords": [
+    "poetry",
+    "code poetry",
+    "latentsignals"
+  ],
+  "homepage": "https://github.com/dcdavidev/latentsignals/tree/main/poetries/in-the-hatred-of-a-minute#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdavidev/latentsignals.git",
+    "directory": "poetries/in-the-hatred-of-a-minute"
+  },
+  "license": "MIT",
+  "author": "Davide Di Criscito",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./in-the-hatred-of-a-minute.ts",
+      "default": "./in-the-hatred-of-a-minute.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./in-the-hatred-of-a-minute.mjs",
+  "types": "./in-the-hatred-of-a-minute.ts",
+  "files": [
+    "in-the-hatred-of-a-minute.mjs",
+    "in-the-hatred-of-a-minute.ts",
+    "in_the_hatred_of_a_minute.go",
+    "in_the_hatred_of_a_minute.py",
+    "in_the_hatred_of_a_minute.rs",
+    "in_the_hatred_of_a_minute.sh",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

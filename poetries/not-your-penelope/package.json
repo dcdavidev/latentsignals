@@ -1,0 +1,41 @@
+{
+  "name": "@latentsignals/not-your-penelope",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Models unilateral devotion, deterministic deadlines, and resource reclamation over infinite waiting.",
+  "keywords": [
+    "poetry",
+    "code poetry",
+    "latentsignals"
+  ],
+  "homepage": "https://github.com/dcdavidev/latentsignals/tree/main/poetries/not-your-penelope#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdavidev/latentsignals.git",
+    "directory": "poetries/not-your-penelope"
+  },
+  "license": "MIT",
+  "author": "Davide Di Criscito",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./not-your-penelope.ts",
+      "default": "./not-your-penelope.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./not-your-penelope.mjs",
+  "types": "./not-your-penelope.ts",
+  "files": [
+    "not-your-penelope.mjs",
+    "not-your-penelope.ts",
+    "not_your_penelope.go",
+    "not_your_penelope.py",
+    "not_your_penelope.rs",
+    "not_your_penelope.sh",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

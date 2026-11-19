@@ -1,0 +1,41 @@
+{
+  "name": "@latentsignals/the-graceful-yield",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A quiet departure from a unidirectional channel: closing the write descriptor, releasing shared locks, and stepping aside with grace so silence is never a fault.",
+  "keywords": [
+    "poetry",
+    "code poetry",
+    "latentsignals"
+  ],
+  "homepage": "https://github.com/dcdavidev/latentsignals/tree/main/poetries/the-graceful-yield#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdavidev/latentsignals.git",
+    "directory": "poetries/the-graceful-yield"
+  },
+  "license": "MIT",
+  "author": "Davide Di Criscito",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./the-graceful-yield.ts",
+      "default": "./the-graceful-yield.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./the-graceful-yield.mjs",
+  "types": "./the-graceful-yield.ts",
+  "files": [
+    "the-graceful-yield.mjs",
+    "the-graceful-yield.ts",
+    "the-graceful-yields.sh",
+    "the_graceful_yield.go",
+    "the_graceful_yield.py",
+    "the_graceful_yield.rs",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

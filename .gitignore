@@ -1,13 +1,19 @@
 .DS_Store
 .env
-/node_modules/
+node_modules/
+
+# Turborepo
+.turbo/
 
 # React Router
-/.react-router/
-/build/
+.react-router/
+build/
+
+# Packed poetry tarballs
+/dist/
 
 # Vercel
-/.vercel/
+.vercel/
 
 # Python
 /.venv/
@@ -17,3 +23,4 @@ __pycache__/
 
 # Rust
 /target/
+*.log

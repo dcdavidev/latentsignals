@@ -1,12 +1,10 @@
-*.log
 .git
-.react-router
-.turbo
+**/.react-router
+**/.turbo
 .venv
 .vercel
 .vscode
-README.md
-build
+**/build
 dist
-node_modules
+**/node_modules
 target

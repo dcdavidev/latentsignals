@@ -18,10 +18,10 @@
   "author": "Davide Di Criscito",
   "type": "module",
   "scripts": {
-    "build": "pnpm run website:build",
+    "build": "turbo run build",
     "check": "pnpm run go:check && pnpm run py:check && pnpm run rs:check && pnpm run js:check && pnpm run sh:check && pnpm run website:typecheck",
     "commit": "pnpm exec cz",
-    "dev": "pnpm run website:dev",
+    "dev": "turbo run dev",
     "fmt": "pnpm run go:fmt && pnpm run py:fmt && pnpm run rs:fmt && pnpm run js:fmt && pnpm run sh:fmt",
     "fmt:check": "pnpm run go:fmt:check && pnpm run py:fmt:check && pnpm run rs:fmt:check && pnpm run js:fmt:check && pnpm run sh:fmt:check",
     "go:check": "task check",
@@ -37,10 +37,12 @@
     "js:lint": "pnpm exec eslint .",
     "js:lint:fix": "pnpm exec eslint . --fix",
     "js:lint:format": "pnpm run js:lint:fix && pnpm run js:fmt",
-    "js:typecheck": "pnpm run website:typecheck",
-    "js:typecheck:fix": "pnpm run website:typecheck:fix",
+    "js:typecheck": "turbo run typecheck",
+    "js:typecheck:fix": "turbo run typecheck",
     "lint": "pnpm run go:lint && pnpm run py:lint && pnpm run rs:lint && pnpm run js:lint && pnpm run sh:lint",
     "lint:fix": "pnpm run py:lint:fix && pnpm run rs:lint:fix && pnpm run js:lint:fix",
+    "poetries:pack": "pnpm --filter \"./poetries/*\" pack --pack-destination ../../dist",
+    "poetries:publish": "pnpm --filter \"./poetries/*\" publish --access public --no-git-checks",
     "prepare": "lefthook install",
     "py:check": "uv run poe check",
     "py:fix": "uv run poe fix",
@@ -62,50 +64,29 @@
     "sh:fmt": "shfmt -i 2 -sr -w ./poetries/**/*.sh",
     "sh:fmt:check": "shfmt -i 2 -sr -d ./poetries/**/*.sh",
     "sh:lint": "pnpm run sh:check",
-    "start": "pnpm run website:start",
+    "start": "pnpm --filter @latentsignals/web start",
     "ts:check": "pnpm run js:check",
     "ts:fmt": "pnpm run js:fmt",
     "ts:fmt:check": "pnpm run js:fmt:check",
     "ts:lint": "pnpm run js:lint",
     "ts:typecheck": "pnpm run js:typecheck",
     "typecheck": "pnpm run js:typecheck",
-    "website:build": "pnpm exec react-router build",
-    "website:dev": "pnpm exec react-router dev",
-    "website:start": "pnpm exec react-router-serve ./build/server/index.js",
-    "website:typecheck": "pnpm exec react-router typegen && tsc",
-    "website:typecheck:fix": "pnpm exec react-router typegen && tsc --noEmit"
+    "website:build": "pnpm --filter @latentsignals/web build",
+    "website:dev": "pnpm --filter @latentsignals/web dev",
+    "website:start": "pnpm --filter @latentsignals/web start",
+    "website:typecheck": "pnpm --filter @latentsignals/web typecheck",
+    "website:typecheck:fix": "pnpm --filter @latentsignals/web typecheck"
   },
   "config": {
     "commitizen": {
       "path": "cz-git"
     }
   },
-  "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@fontsource/fira-mono": "^5.3.0",
-    "@mui/material": "^9.5.0",
-    "@react-router/node": "^8.4.0",
-    "@react-router/serve": "^8.4.0",
-    "@resvg/resvg-js": "^2.6.2",
-    "@vercel/react-router": "^1.3.7",
-    "highlight.js": "^11.12.0",
-    "isbot": "^5.1.36",
-    "marked": "^18.1.1",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "react-router": "^8.4.0",
-    "satori": "^0.63.2"
-  },
   "devDependencies": {
     "@commitlint/cli": "^20.5.3",
     "@commitlint/config-conventional": "^20.5.3",
     "@prettier/plugin-xml": "^3.4.2",
-    "@react-router/dev": "^8.5.0",
-    "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^26.6.5",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.7",
     "commitizen": "^4.3.2",
     "commitlint-config-spellbookx": "^0.11.1",
     "conventional-changelog-conventionalcommits": "^9.3.1",
@@ -124,9 +105,8 @@
     "prettier-plugin-sh": "^0.20.2",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "prettier-plugin-toml": "^4.0.0",
-    "tailwindcss": "^4.2.2",
     "turbo": "^2.11.9",
-    "typescript": "^5.9.3",
-    "vite": "^8.0.3"
-  }
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@12.15.0"
 }

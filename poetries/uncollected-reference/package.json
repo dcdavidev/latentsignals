@@ -1,0 +1,41 @@
+{
+  "name": "@latentsignals/uncollected-reference",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A programmatic reflection on suspended and unspoken devotion.",
+  "keywords": [
+    "poetry",
+    "code poetry",
+    "latentsignals"
+  ],
+  "homepage": "https://github.com/dcdavidev/latentsignals/tree/main/poetries/uncollected-reference#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdavidev/latentsignals.git",
+    "directory": "poetries/uncollected-reference"
+  },
+  "license": "MIT",
+  "author": "Davide Di Criscito",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./uncollected-reference.ts",
+      "default": "./uncollected-reference.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./uncollected-reference.mjs",
+  "types": "./uncollected-reference.ts",
+  "files": [
+    "uncollected-reference.mjs",
+    "uncollected-reference.ts",
+    "uncollected_reference.go",
+    "uncollected_reference.py",
+    "uncollected_reference.rs",
+    "uncollected_reference.sh",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -61,7 +61,7 @@ const EXTENSION_MAP: Record<
 
 // Vite compile-time bundle: embeds poetry packages and raw source files into the bundle
 const BUNDLED_PACKAGES = import.meta.glob<Record<string, unknown>>(
-  '../../poetries/*/package.json',
+  '../../../../poetries/*/package.json',
   {
     eager: true,
     import: 'default',
@@ -70,10 +70,10 @@ const BUNDLED_PACKAGES = import.meta.glob<Record<string, unknown>>(
 
 const BUNDLED_FILES = import.meta.glob<string>(
   [
-    '../../poetries/*/*',
-    '../../poetries/*/README.md',
-    '../../poetries/*/lib/*',
-    '../../poetries/*/src/*',
+    '../../../../poetries/*/*',
+    '../../../../poetries/*/README.md',
+    '../../../../poetries/*/lib/*',
+    '../../../../poetries/*/src/*',
   ],
   {
     eager: true,

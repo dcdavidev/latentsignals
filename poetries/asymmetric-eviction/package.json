@@ -1,0 +1,41 @@
+{
+  "name": "@latentsignals/asymmetric-eviction",
+  "version": "0.1.0",
+  "private": false,
+  "description": "An asymmetric cache teardown: retaining the good while you keep the bad, and the pity of wishing to forget the way you did.",
+  "keywords": [
+    "poetry",
+    "code poetry",
+    "latentsignals"
+  ],
+  "homepage": "https://github.com/dcdavidev/latentsignals/tree/main/poetries/asymmetric-eviction#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdavidev/latentsignals.git",
+    "directory": "poetries/asymmetric-eviction"
+  },
+  "license": "MIT",
+  "author": "Davide Di Criscito",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./asymmetric-eviction.ts",
+      "default": "./asymmetric-eviction.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./asymmetric-eviction.mjs",
+  "types": "./asymmetric-eviction.ts",
+  "files": [
+    "asymmetric-eviction.mjs",
+    "asymmetric-eviction.ts",
+    "asymmetric_eviction.go",
+    "asymmetric_eviction.py",
+    "asymmetric_eviction.rs",
+    "asymmetric_eviction.sh",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

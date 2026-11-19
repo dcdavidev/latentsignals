@@ -1,2 +1,6 @@
+packages:
+  - apps/*
+  - poetries/*
+
 allowBuilds:
   lefthook: true

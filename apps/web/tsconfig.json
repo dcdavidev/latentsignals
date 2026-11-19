@@ -15,7 +15,7 @@
     "rootDirs": [".", "./.react-router/types"],
     "paths": {
       "~/*": ["./app/*"],
-      "@poetries/*": ["./poetries/*"]
+      "@poetries/*": ["../../poetries/*"]
     },
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,

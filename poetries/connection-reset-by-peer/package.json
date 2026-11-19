@@ -1,0 +1,41 @@
+{
+  "name": "@latentsignals/connection-reset-by-peer",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A formal protocol teardown illustrating betrayal, wounded pride, and irreversible socket termination.",
+  "keywords": [
+    "poetry",
+    "code poetry",
+    "latentsignals"
+  ],
+  "homepage": "https://github.com/dcdavidev/latentsignals/tree/main/poetries/connection-reset-by-peer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdavidev/latentsignals.git",
+    "directory": "poetries/connection-reset-by-peer"
+  },
+  "license": "MIT",
+  "author": "Davide Di Criscito",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./connection-reset-by-peer.ts",
+      "default": "./connection-reset-by-peer.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./connection-reset-by-peer.mjs",
+  "types": "./connection-reset-by-peer.ts",
+  "files": [
+    "connection-reset-by-peer.mjs",
+    "connection-reset-by-peer.ts",
+    "connection_reset_by_peer.go",
+    "connection_reset_by_peer.py",
+    "connection_reset_by_peer.rs",
+    "connection_reset_by_peer.sh",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
