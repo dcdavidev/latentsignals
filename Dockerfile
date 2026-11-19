@@ -24,11 +24,9 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 ENV PORT=3000
-ENV POETRIES_DIR=/app/poetries
 
 COPY --from=builder /prod/web ./
 COPY --from=builder /repo/apps/web/build ./build
-COPY --from=builder /repo/poetries ./poetries
 
 EXPOSE 3000
 

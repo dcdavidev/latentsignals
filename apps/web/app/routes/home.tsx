@@ -37,17 +37,17 @@ export const meta: Route.MetaFunction = () => [
 ];
 
 /**
- * Route loader fetching all poetries sorted alphabetically.
+ * Route loader fetching all poetries published on npm, newest first.
  *
  * @returns Object with list of poetry summaries.
  */
 export async function loader() {
-  const poetries = getAllPoetries();
+  const poetries = await getAllPoetries();
   return { poetries };
 }
 
 /**
- * Home component rendering alphabetical catalog of poems.
+ * Home component rendering the catalog of poems, newest first.
  *
  * @param props Route component props with loader data.
  * @returns Rendered JSX element.
@@ -112,7 +112,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           </Stack>
         </Box>
 
-        {/* Alphabetical Poetry List */}
+        {/* Poetry List (newest first) */}
         <Box
           sx={{
             display: 'grid',
@@ -121,7 +121,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           }}
         >
           {poetries.map((poem, index) => {
-            const indexFormatted = String(index + 1).padStart(2, '0');
+            // Chronological numbering: the oldest signal is #01, the newest is on top.
+            const indexFormatted = String(poetries.length - index).padStart(
+              2,
+              '0'
+            );
+            const publishedDate = poem.publishedAt?.slice(0, 10);
             return (
               <Card
                 key={poem.slug}
@@ -168,6 +173,11 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                           color="text.secondary"
                           sx={{ fontFamily: 'var(--font-mono)' }}
                         >
+                          {publishedDate && (
+                            <time dateTime={poem.publishedAt}>
+                              {publishedDate} ·{' '}
+                            </time>
+                          )}
                           {poem.languages.length} languages
                         </Typography>
                       </Box>

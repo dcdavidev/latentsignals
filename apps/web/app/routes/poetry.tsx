@@ -73,7 +73,7 @@ export async function loader({ params }: Route.LoaderArgs) {
     throw new Response('Poetry slug required', { status: 400 });
   }
 
-  const poetry = getPoetryBySlug(slug);
+  const poetry = await getPoetryBySlug(slug);
   if (!poetry) {
     throw new Response(`Poetry "${slug}" not found`, { status: 404 });
   }

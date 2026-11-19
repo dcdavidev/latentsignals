@@ -1,6 +1,16 @@
+linkWorkspacePackages: false
+
 packages:
   - apps/*
   - poetries/*
 
 allowBuilds:
   lefthook: true
+
+minimumReleaseAgeExclude:
+  - '@latentsignals/asymmetric-eviction@0.1.0'
+  - '@latentsignals/connection-reset-by-peer@0.1.0'
+  - '@latentsignals/in-the-hatred-of-a-minute@0.1.0'
+  - '@latentsignals/not-your-penelope@0.1.0'
+  - '@latentsignals/the-graceful-yield@0.1.0'
+  - '@latentsignals/uncollected-reference@0.1.0'

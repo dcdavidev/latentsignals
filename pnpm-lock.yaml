@@ -250,6 +250,24 @@ importers:
       '@fontsource/fira-mono':
         specifier: ^5.3.0
         version: 5.3.0
+      '@latentsignals/asymmetric-eviction':
+        specifier: ^0.1.0
+        version: 0.1.0
+      '@latentsignals/connection-reset-by-peer':
+        specifier: ^0.1.0
+        version: 0.1.0
+      '@latentsignals/in-the-hatred-of-a-minute':
+        specifier: ^0.1.0
+        version: 0.1.0
+      '@latentsignals/not-your-penelope':
+        specifier: ^0.1.0
+        version: 0.1.0
+      '@latentsignals/the-graceful-yield':
+        specifier: ^0.1.0
+        version: 0.1.0
+      '@latentsignals/uncollected-reference':
+        specifier: ^0.1.0
+        version: 0.1.0
       '@mui/material':
         specifier: ^9.5.0
         version: 9.5.0(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.1)(supports-color@7.2.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.1)(supports-color@7.2.0))(@types/react@19.3.0)(react@19.3.1)(supports-color@7.2.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -1037,6 +1055,24 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@latentsignals/asymmetric-eviction@0.1.0':
+    resolution: {integrity: sha512-dVyGIk9LoCva4f0KSb/HJbIcHmtZEtzrAgSOh4hReOKQLIQNoWxiFgAeWCB3jXJUndHZ6FVvpTpVF4GmNMoiyg==}
+
+  '@latentsignals/connection-reset-by-peer@0.1.0':
+    resolution: {integrity: sha512-gs+UJLbjWMxXlp7Pu+gEMshj1cVaHYHXCUST7rM5KlwI0+pFPSwXIOycfcssPvtHlgJu2tC5ij/Ps4Nrlj3Xjw==}
+
+  '@latentsignals/in-the-hatred-of-a-minute@0.1.0':
+    resolution: {integrity: sha512-yJpMbW88yHFPKxZgNzH6VWYFoHLbFRAHSGBPW1lmZAk6sG19pOfAbAWivtKAEDByU3/Uul+ZNPCRoreY9PP4Xw==}
+
+  '@latentsignals/not-your-penelope@0.1.0':
+    resolution: {integrity: sha512-dvIzfsA1AHMrrXlM83UV/BXZeAROhandX6Eta6GuXQIzc57gMchgkKqEyuo9TkPfrVypEny4jcHcSmhu9x39FQ==}
+
+  '@latentsignals/the-graceful-yield@0.1.0':
+    resolution: {integrity: sha512-bw2IDR0YBx5S0kUMi4FDCfGrDIJIeAPcYagfZV91rps1ZSUdRzvkObR8AYasvI4BEloMJtltdN+wW8kQfEdCwA==}
+
+  '@latentsignals/uncollected-reference@0.1.0':
+    resolution: {integrity: sha512-M/RB56ELTVoF73prUroJsOT0QEKd4qcg6L8uwWdgnBQKL/CuRfv0dK3MuZHqIXdwy1adAytHrH0g04GjMP+viw==}
 
   '@mui/core-downloads-tracker@9.5.0':
     resolution: {integrity: sha512-PErEpl3Lp+1ZqWYKI7GQU8XSiciAFmLbUAZ7IoaUL598HLy1UAFuEUMEJu8yAS1v8vkXYzWprMVZzky4UwXoOA==}
@@ -5895,6 +5931,18 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
+
+  '@latentsignals/asymmetric-eviction@0.1.0': {}
+
+  '@latentsignals/connection-reset-by-peer@0.1.0': {}
+
+  '@latentsignals/in-the-hatred-of-a-minute@0.1.0': {}
+
+  '@latentsignals/not-your-penelope@0.1.0': {}
+
+  '@latentsignals/the-graceful-yield@0.1.0': {}
+
+  '@latentsignals/uncollected-reference@0.1.0': {}
 
   '@mui/core-downloads-tracker@9.5.0': {}
 
